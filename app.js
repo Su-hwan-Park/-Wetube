@@ -20,6 +20,7 @@ const betweenHome = (req, res, next) => {
 };
 // middlewares
 
+app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));

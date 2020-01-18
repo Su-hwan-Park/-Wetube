@@ -1,8 +1,8 @@
-export const join = (req, res) => res.send("Join");
-export const login = (req, res) => res.send("Login");
-export const logout = (req, res) => res.send("Logout");
-export const videos = (req, res) => res.send("Videos");
-export const videoDetail = (req, res) => res.send("VideoDetail");
-export const upload = (req, res) => res.send("Upload");
-export const editVideo = (req, res) => res.send("EditVideo");
-export const deleteVideo = (req, res) => res.send("DeleteVideo");
+export const join = (req, res) => res.render("join");
+export const login = (req, res) => res.render("login");
+export const logout = (req, res) => res.render("logout");
+export const videos = (req, res) => res.render("videos");
+export const videoDetail = (req, res) => res.render("videoDetail");
+export const upload = (req, res) => res.render("upload");
+export const editVideo = (req, res) => res.render("editVideo");
+export const deleteVideo = (req, res) => res.render("deleteVideo");

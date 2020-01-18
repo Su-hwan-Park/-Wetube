@@ -1,6 +1,6 @@
-export const home = (req, res) => res.send("Home");
-export const search = (req, res) => res.send("Search");
-export const users = (req, res) => res.send("Users");
-export const userDetail = (req, res) => res.send("UserDetail");
-export const editProfile = (req, res) => res.send("EditProfile");
-export const changePassword = (req, res) => res.send("ChangePassword");
+export const home = (req, res) => res.render("home");
+export const search = (req, res) => res.render("search");
+export const users = (req, res) => res.render("users");
+export const userDetail = (req, res) => res.render("userDetail");
+export const editProfile = (req, res) => res.render("editProfile");
+export const changePassword = (req, res) => res.render("changePassword");
