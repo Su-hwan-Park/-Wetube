@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
+import routes from "./routes";
 // export시 default로 하지 않았기 때문
 const app = express();
 
@@ -27,10 +29,10 @@ app.use(morgan("dev"));
 // app.get("/", function(req, res) {
 //   res.send("Hi from Home");
 // });
-app.get("/", handleHome);
+app.use(routes.home, globalRouter);
 
-app.get("/profile", handleProfile);
+app.use(routes.videos, videoRouter);
 
-app.use("/user", userRouter);
+app.use(routes.users, userRouter);
 
 export default app;
