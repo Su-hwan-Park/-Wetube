@@ -4,11 +4,12 @@
 doctype html
 html
     head
-        title | Wetube
+        //head에 fontawesome사용이 가능한 링크를 달면 어디든 사용가능
+        <script src="https://kit.fontawesome.com/7459ed3390.js" crossorigin="anonymous"></script>
+        title #{pageTitle} | #{siteName}
     body
-        header
-            h1 Wetube
+        include ../partials/header
+
         main
             block content
-        footer
-            span &copy; Wetube
+        include ../partials/footer

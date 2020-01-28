@@ -1,8 +1,9 @@
-import express from "express";
-import morgan from "morgan";
-import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import express from "express";
+import helmet from "helmet";
+import { localMiddleware } from "./middlewares";
+import morgan from "morgan";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
@@ -20,12 +21,13 @@ const betweenHome = (req, res, next) => {
 };
 // middlewares
 
+app.use(helmet());
 app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet());
 app.use(morgan("dev"));
+app.use(localMiddleware);
 
 // app.get("/", function(req, res) {
 //   res.send("Hi from Home");
