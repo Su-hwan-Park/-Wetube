@@ -1,8 +1,13 @@
 // index.js파일을 app과 init파일로 분리
 // export와 import 활용
+import "./db";
 import app from "./app";
+import dotenv from "dotenv";
+dotenv.config();
+import "./models/Video";
+import "./models/Comment";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 
 const handleListening = () =>
   console.log(`Listening on: http://localhost:${PORT}`);
